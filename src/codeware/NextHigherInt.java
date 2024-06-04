@@ -8,8 +8,14 @@ public class NextHigherInt {
 
     public static int nextHigher(int n) {
         String nInBinary = Integer.toBinaryString(n);
+        int nextHigher = n;
+        String nextHigherInBinary = Integer.toBinaryString(nextHigher);
+        boolean check = ( countOne(nInBinary) == countOne(nextHigherInBinary) );
+        while (!check) {
+            nextHigher++;
+        }
 
-        return 0;
+        return nextHigher;
     }
     public static int countOne (String intInBinary) {
         int count = 0;
