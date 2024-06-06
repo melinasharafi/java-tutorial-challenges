@@ -1,4 +1,4 @@
-package load_bog_file_challenge;
+package load_big_file_challenge;
 
 import java.util.HashMap;
 import java.util.Map;
