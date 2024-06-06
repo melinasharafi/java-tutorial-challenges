@@ -40,14 +40,16 @@ public class Locations<scanner> implements Map<Integer, Location> {
 
     static {
         // using try-with-resource
-        try (Scanner scanner0 = new Scanner(new FileReader("locations_big.txt"));
-             Scanner scanner1 = new Scanner(new BufferedReader(new FileReader("directions_big.txt")))) {
+        try (Scanner scanner = new Scanner(new FileReader("locations_big.txt"));
+             BufferedReader dirFile = new BufferedReader(new FileReader("directions_big.txt"))) {
 
-            scanner0.useDelimiter(",");
-            while (scanner0.hasNextLine()) {
-                int loc = scanner0.nextInt();
-                scanner0.skip(scanner0.delimiter());
-                String description = scanner0.nextLine();
+            scanner.useDelimiter(",");
+            while (scanner.hasNextLine()) {
+
+                int loc = scanner.nextInt();
+                scanner.skip(scanner.delimiter());
+                String description = scanner.nextLine();
+
                 System.out.println("Imported loc: " + loc + ": " + description);
                 Map<String, Integer> tempExit = new HashMap<>();
                 locations.put(loc, new Location(loc, description, tempExit));
@@ -55,17 +57,18 @@ public class Locations<scanner> implements Map<Integer, Location> {
 
             // Now read the exits
 
-            scanner1.useDelimiter(",");
-            while (scanner1.hasNextLine()) {
-                int loc = scanner1.nextInt();
-                scanner1.skip(scanner1.delimiter());
-                String direction = scanner1.next();
-                scanner1.skip(scanner1.delimiter());
-                String dest = scanner1.nextLine();
-                int destination = Integer.parseInt(dest);
+            String input;
+            while ((input = dirFile.readLine()) != null) {
+
+                String[] data = input.split(",");
+                int loc = Integer.parseInt(data[0]);
+                String direction = data[1];
+                int destination = Integer.parseInt(data[2]);
+
                 System.out.println(loc + ": " + direction + ": " + destination);
                 Location location = locations.get(loc);
                 location.addExit(direction, destination);
+
             }
         } catch (Exception e) {
             e.printStackTrace();
