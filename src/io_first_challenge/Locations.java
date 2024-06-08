@@ -1,4 +1,4 @@
-package load_big_file_challenge;
+package io_first_challenge;
 
 
 import java.io.*;
@@ -8,7 +8,7 @@ import java.util.*;
  * Created by timbuchalka on 2/04/2016.
  */
 public class Locations<scanner> implements Map<Integer, Location> {
-    private static Map<Integer, Location> locations = new HashMap<Integer, Location>();
+    private static Map<Integer, Location> locations = new LinkedHashMap<Integer, Location>();
 
     public static void main(String[] args) throws IOException {
 
@@ -27,6 +27,9 @@ public class Locations<scanner> implements Map<Integer, Location> {
             for (Location location : locations.values()) {
                 locationWriter.write(location.getLocationID() + "," + location.getDescription() + "\n");
                 for (String direction : location.getExits().keySet()) {
+                    if (direction.equalsIgnoreCase("Q")) {
+                        continue;
+                    }
                     directionWriter.write(location.getLocationID() + "," + direction + "," + location.getExits().get(direction) + "\n");
                 }
             }
