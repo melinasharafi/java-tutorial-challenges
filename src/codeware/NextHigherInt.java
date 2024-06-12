@@ -40,6 +40,6 @@ public class NextHigherInt {
         System.out.println(countOne(127));
         System.out.println(countOne(128));
         System.out.println(nextHigher(201326592));
-        
+
     }
 }
