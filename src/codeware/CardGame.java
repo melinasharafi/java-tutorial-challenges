@@ -8,6 +8,25 @@ public class CardGame {
 
         for (int i = 0; i < deckJosh.length; i++) {
 
+            // find the ith card rank
+            int joshCardScore = findCardIndex(deckJosh[i]);
+            int steveCardScore = findCardIndex(deckSteve[i]);
+
+            // give the round score
+            if (joshCardScore > steveCardScore) {
+                joshScore++;
+            }
+            if (joshCardScore < steveCardScore) {
+                steveScore++;
+            }
+        }
+
+        if (joshScore > steveScore) {
+            return String.format("Josh wins %d to %d", joshScore, steveScore);
+        }
+
+        if (steveScore > joshScore) {
+            String.format("Steve wins %d to %d", steveScore, joshScore);
         }
         return "Tie";
     }
