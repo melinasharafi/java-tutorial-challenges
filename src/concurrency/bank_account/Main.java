@@ -3,7 +3,7 @@ package concurrency.bank_account;
 public class Main {
     public static void main(String[] args) {
 
-        BankAccount bankAccount = new BankAccount("12345-678", 1000.00);
+        BankAccount1 bankAccount = new BankAccount1("12345-678", 1000.00);
 
         new Thread(new Runnable() {
             @Override
