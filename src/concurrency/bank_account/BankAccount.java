@@ -1,5 +1,6 @@
 package concurrency.bank_account;
 
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -12,23 +13,37 @@ public class BankAccount {
         this.accountNumber = accountNumber;
         this.balance = initialBalance;
         this.lock = new ReentrantLock();
-    } 
+    }
 
     public void deposit(double amount) {
-        lock.lock();
         try {
-            this.balance += amount;
-        } finally {
-            lock.unlock();
+            if (lock.tryLock(1000, TimeUnit.MILLISECONDS)) {
+                try {
+                    this.balance += balance;
+                } finally {
+                    lock.unlock();
+                }
+            } else {
+                System.out.println("Could not get the lock");
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
 
-    public synchronized void withdraw(double amount) {
-        lock.lock();
+    public void withdraw(double amount) {
         try {
-            this.balance -= amount;
-        } finally {
-            lock.unlock();
+            if (lock.tryLock(1000, TimeUnit.MILLISECONDS)) {
+                try {
+                    this.balance -= balance;
+                } finally {
+                    lock.unlock();
+                }
+            } else {
+                System.out.println("Could not get the lock");
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
 
