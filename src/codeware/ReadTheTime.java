@@ -10,19 +10,32 @@ public class ReadTheTime {
         int hour = Integer.parseInt(data[0]);
         int minute = Integer.parseInt(data[1]);
 
-        if (minute > 30) {
-            minute = minute - 30;
-            timeInText.append(convertNumberToWord(minute)).append(" past ");
-        } else {
-            timeInText.append(convertNumberToWord(minute)).append(" to ");
+        if (minute == 0) {
+            if (hour <= 12) {
+                timeInText.append(convertNumberToWord(hour));
+            } else {
+                hour = hour - 12;
+                timeInText.append(convertNumberToWord(hour));
+            }
+            timeInText.append(" o'clock");
         }
 
-        if (hour <= 12) {
-            timeInText.append(convertNumberToWord(hour));
-        } else {
-            hour = hour - 12;
-            timeInText.append(convertNumberToWord(hour));
+        else {
+            if (minute > 30) {
+                minute = minute - 30;
+                timeInText.append(convertNumberToWord(minute)).append(" past ");
+            } else {
+                timeInText.append(convertNumberToWord(minute)).append(" to ");
+            }
+
+            if (hour <= 12) {
+                timeInText.append(convertNumberToWord(hour));
+            } else {
+                hour = hour - 12;
+                timeInText.append(convertNumberToWord(hour));
+            }
         }
+
 
         return timeInText.toString();
     }
