@@ -16,4 +16,12 @@ public class BankAccount {
     public synchronized void withdraw(double amount) {
         balance -= amount;
     }
+
+    public String getAccountNumber() {
+        return this.accountNumber;
+    }
+
+    public void printAccountNumber() {
+        System.out.println("Account number = " + this.accountNumber);
+    }
 }
