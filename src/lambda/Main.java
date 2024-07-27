@@ -27,9 +27,15 @@ public class Main {
         };
 
         // challenge 3
-        System.out.println(s.apply("1234567890"));
+        System.out.println(s.apply("1234567890 "));
 
 
+        // challenge 4
+        everySecondCharacter(s);
+    }
 
+    // challenge 4
+    private  static void everySecondCharacter(Function function) {
+        System.out.println(function.apply("1234567890"));
     }
 }
