@@ -1,5 +1,7 @@
 package lambda;
 
+import jdk.jshell.execution.Util;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -64,9 +66,7 @@ public class Main {
             for (String name : names) {
                 upperCased.add(name.substring(0, 1).toUpperCase() + name.substring(1));
             }
-            upperCased.sort((s1, s2) -> {
-                return s1.compareTo(s2);
-            });
+            upperCased.sort(String :: compareTo);
             return upperCased;
         };
 
