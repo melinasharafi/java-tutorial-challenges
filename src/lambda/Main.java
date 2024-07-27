@@ -1,6 +1,7 @@
 package lambda;
 
 import java.util.function.Function;
+import java.util.function.Supplier;
 
 public class Main {
     public static void main(String[] args) {
@@ -32,6 +33,12 @@ public class Main {
 
         // challenge 4
         everySecondCharacter(s);
+
+        // challenge 6
+        Supplier<String> supplier = () -> {
+            return "I love Java";
+        };
+        System.out.println(supplier.get());
     }
 
     // challenge 4
