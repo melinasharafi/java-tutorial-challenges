@@ -78,7 +78,7 @@ public class Main {
         System.out.println("---------------------------------");
         topNames2015
                 .stream()
-                .map(String::toUpperCase)
+                .map(name -> name.substring(0, 1).toUpperCase() + name.substring(1))
                 .sorted()
                 .forEach(System.out::println);
 
