@@ -25,8 +25,11 @@ public class Main {
             }
             return returnVal.toString();
         };
-        System.out.println(s.apply("melina"));
 
-        
+        // challenge 3
+        System.out.println(s.apply("1234567890"));
+
+
+
     }
 }
