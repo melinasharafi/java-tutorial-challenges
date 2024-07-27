@@ -83,12 +83,12 @@ public class Main {
                 .forEach(System.out::println);
 
         // challenge 12
-        long namesBeginingWithA = topNames2015
+        long namesBeginningWithA = topNames2015
                 .stream()
                 .map(String::toUpperCase)
                 .filter(name -> name.startsWith("A"))
                 .count();
-        System.out.println(namesBeginingWithA);
+        System.out.println("Number of names beginning with A is: " + namesBeginningWithA);
 
     }
 
