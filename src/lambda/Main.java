@@ -82,6 +82,14 @@ public class Main {
                 .sorted()
                 .forEach(System.out::println);
 
+        // challenge 12
+        long namesBeginingWithA = topNames2015
+                .stream()
+                .map(String::toUpperCase)
+                .filter(name -> name.startsWith("A"))
+                .count();
+        System.out.println(namesBeginingWithA);
+
     }
 
     // challenge 4
