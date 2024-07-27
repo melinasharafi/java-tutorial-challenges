@@ -66,12 +66,21 @@ public class Main {
             for (String name : names) {
                 upperCased.add(name.substring(0, 1).toUpperCase() + name.substring(1));
             }
-            upperCased.sort(String :: compareTo);
+            // challenge 10
+            upperCased.sort(String::compareTo);
             return upperCased;
         };
 
         List<String> result = sortedUpperCased.apply(topNames2015);
         result.forEach(name -> System.out.println(name));
+
+        // challenge 11
+        System.out.println("---------------------------------");
+        topNames2015
+                .stream()
+                .map(String::toUpperCase)
+                .sorted()
+                .forEach(System.out::println);
 
     }
 
