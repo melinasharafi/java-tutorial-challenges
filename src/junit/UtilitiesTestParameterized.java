@@ -39,6 +39,6 @@ public class UtilitiesTestParameterized {
 
     @Test
     public void removePairs() {
-        assertEquals(output, input);
+        assertEquals(output, util.removePairs(input));
     }
 }
