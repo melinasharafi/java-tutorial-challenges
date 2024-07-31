@@ -9,6 +9,7 @@ public class UtilitiesTest {
     public void everyNthChar() {
         Utilities util = new Utilities();
         assertArrayEquals(new char[]{'e', 'l'}, util.everyNthChar(new char[]{'h', 'e', 'l', 'l', 'o'}, 2));
+        assertArrayEquals(new char[] {'m', 'i'}, util.everyNthChar(new char[] {'m', 'i'}, 4));
     }
 
     @org.junit.Test
