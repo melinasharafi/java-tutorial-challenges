@@ -28,6 +28,8 @@ public class UtilitiesTest {
 
     @org.junit.Test
     public void nullIfOddLength() {
-        fail("Test code doesn't implemented yet...");
+        Utilities util = new Utilities();
+        assertEquals("melina", util.nullIfOddLength("melina"));
+        assertNull("The String is null", util.nullIfOddLength("melin"));
     }
 }
