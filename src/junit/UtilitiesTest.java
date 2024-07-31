@@ -7,7 +7,8 @@ public class UtilitiesTest {
 
     @org.junit.Test
     public void everyNthChar() {
-        fail("Test code doesn't implemented yet...");
+        Utilities util = new Utilities();
+        assertArrayEquals(new char[]{'e', 'l'}, util.everyNthChar(new char[]{'h', 'e', 'l', 'l', 'o'}, 2));
     }
 
     @org.junit.Test
