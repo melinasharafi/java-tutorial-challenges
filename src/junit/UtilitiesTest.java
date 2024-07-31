@@ -23,7 +23,8 @@ public class UtilitiesTest {
 
     @org.junit.Test
     public void converter() {
-        fail("Test code doesn't implemented yet...");
+        Utilities util = new Utilities();
+        assertEquals(300, util.converter(10, 5));
     }
 
     @org.junit.Test
