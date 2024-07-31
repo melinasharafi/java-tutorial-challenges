@@ -9,7 +9,7 @@ public class UtilitiesTest {
     public void everyNthChar() {
         Utilities util = new Utilities();
         assertArrayEquals(new char[]{'e', 'l'}, util.everyNthChar(new char[]{'h', 'e', 'l', 'l', 'o'}, 2));
-        assertArrayEquals(new char[] {'m', 'i'}, util.everyNthChar(new char[] {'m', 'i'}, 4));
+        assertArrayEquals(new char[]{'m', 'i'}, util.everyNthChar(new char[]{'m', 'i'}, 4));
     }
 
     @org.junit.Test
@@ -22,9 +22,15 @@ public class UtilitiesTest {
     }
 
     @org.junit.Test
-    public void converter() {
+    public void converter() throws Exception{
         Utilities util = new Utilities();
         assertEquals(300, util.converter(10, 5));
+    }
+
+    @org.junit.Test(expected = ArithmeticException.class)
+    public void converter_ArithmeticException() throws Exception {
+        Utilities util = new Utilities();
+        assertEquals(new ArithmeticException(), util.converter(10, 0));
     }
 
     @org.junit.Test
