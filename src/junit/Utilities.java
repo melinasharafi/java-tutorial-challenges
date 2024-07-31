@@ -25,7 +25,7 @@ public class Utilities {
     // to each other, by removing on e occurred of the character
     public String removePairs(String source) {
 
-        if (source.length() < 2) {
+        if (source == null || source.length() < 2) {
             return source;
         }
 
