@@ -14,8 +14,7 @@ public class UtilitiesTest {
         Utilities util = new Utilities();
         assertEquals("ABCDEF", util.removePairs("AABCDDEFF"));
         assertEquals("ABCABDEF", util.removePairs("ABCCABDEEF"));
-
-     }
+    }
 
     @org.junit.Test
     public void converter() {
