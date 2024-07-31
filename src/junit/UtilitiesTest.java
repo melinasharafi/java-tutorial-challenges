@@ -1,3 +1,4 @@
+
 package junit;
 
 import static org.junit.Assert.*;
@@ -14,6 +15,8 @@ public class UtilitiesTest {
         Utilities util = new Utilities();
         assertEquals("ABCDEF", util.removePairs("AABCDDEFF"));
         assertEquals("ABCABDEF", util.removePairs("ABCCABDEEF"));
+        assertEquals("A", util.removePairs("A"));
+        assertEquals(null, util.removePairs(null));
     }
 
     @org.junit.Test
