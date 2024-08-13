@@ -16,7 +16,9 @@ public class BreakCamelCase {
             }
 
             // add others letters
-            output.append(c);
+            else {
+                output.append(c);
+            }
         }
 
         return output.toString();
