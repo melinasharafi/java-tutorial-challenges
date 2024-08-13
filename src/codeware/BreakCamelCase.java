@@ -22,4 +22,8 @@ public class BreakCamelCase {
         return output.toString();
     }
 
+    public static void main(String[] args) {
+        System.out.println(camelCase("melinaSharafi"));
+    }
+
 }
