@@ -10,7 +10,6 @@ public class BreakCamelCase {
 
             // change the capital letter to small letter
             if (c > 64 & c < 91) {
-                c = (char) (c + 32);
                 output.append(" ");
                 output.append(c);
             }
