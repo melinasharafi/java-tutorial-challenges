@@ -1,4 +1,56 @@
 package codeware;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class PrimesInNumber {
+
+    public static String factors(int n) {
+
+        // check for positive numbers
+        if (n <= 0) {
+            return "Only positive numbers have prime factor decomposition";
+        }
+
+        StringBuilder output = new StringBuilder();
+
+        List<Integer> primeNumbers = new ArrayList<>();
+        p
+
+        while (n == 0) {
+
+            if (n % 2 == 0) {
+                int numberOf2 = n / 2;
+                output.append("(2**");
+                output.append(numberOf2);
+                output.append(")");
+            }
+        }
+
+    }
+
+    // Function to check if a number is prime
+    public static boolean isPrime(int number) {
+        if (number <= 1) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // Function to generate a list of prime numbers up to a certain limit
+    public static List<Integer> generatePrimes(int limit) {
+        List<Integer> primes = new ArrayList<>();
+        for (int i = 2; i <= limit; i++) {
+            if (isPrime(i)) {
+                primes.add(i);
+            }
+        }
+        return primes;
+    }
+
 }
