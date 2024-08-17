@@ -16,7 +16,7 @@ public class PrimesInNumber {
 
         List<Integer> primeNumbers = generatePrimes(100);
 
-        while (n == 0) {
+        while (!(n == 0)) {
 
             for (int prime : primeNumbers) {
                 if (n % prime == 0) {
@@ -33,6 +33,10 @@ public class PrimesInNumber {
                         output.append(")");
                         n = n - (numberOfPrime * prime);
                     }
+                }
+
+                if (n == 0) {
+                    break;
                 }
             }
         }
