@@ -16,7 +16,6 @@ public class PrimesInNumber {
 
         List<Integer> primeNumbers = generatePrimes(100);
 
-
         while (n == 0) {
 
             for (int prime : primeNumbers) {
@@ -65,4 +64,7 @@ public class PrimesInNumber {
         return primes;
     }
 
+    public static void main(String[] args) {
+        System.out.println(factors(24));
+    }
 }
