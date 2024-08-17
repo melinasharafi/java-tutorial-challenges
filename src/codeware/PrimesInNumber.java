@@ -14,19 +14,31 @@ public class PrimesInNumber {
 
         StringBuilder output = new StringBuilder();
 
-        List<Integer> primeNumbers = new ArrayList<>();
-        p
+        List<Integer> primeNumbers = generatePrimes(100);
+
 
         while (n == 0) {
 
-            if (n % 2 == 0) {
-                int numberOf2 = n / 2;
-                output.append("(2**");
-                output.append(numberOf2);
-                output.append(")");
+            for (int prime : primeNumbers) {
+                if (n % prime == 0) {
+                    int numberOfPrime = n / 2;
+
+                    if (numberOfPrime == 1) {
+                        output.append(numberOfPrime);
+                        n = n - (numberOfPrime * prime);
+                    } else {
+                        output.append("(");
+                        output.append(prime);
+                        output.append("**");
+                        output.append(numberOfPrime);
+                        output.append(")");
+                        n = n - (numberOfPrime * prime);
+                    }
+                }
             }
         }
 
+        return output.toString();
     }
 
     // Function to check if a number is prime
