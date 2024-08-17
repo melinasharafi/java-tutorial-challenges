@@ -31,13 +31,12 @@ public class PrimesInNumber {
                     output.append("(");
                     output.append(prime);
                     output.append(")");
-                } else {
+                } else if (numberOfPrime > 1) {
                     output.append("(");
                     output.append(prime);
                     output.append("**");
                     output.append(numberOfPrime);
                     output.append(")");
-
                 }
 
                 if (n == 1) {
@@ -76,8 +75,7 @@ public class PrimesInNumber {
 
     public static void main(String[] args) {
         System.out.println(factors(24));
-
-//        System.out.println(factors(25));
+        System.out.println(factors(7775460));
     }
 }
 
