@@ -16,48 +16,35 @@ public class PrimesInNumber {
 
         List<Integer> primeNumbers = generatePrimes(100);
 
-        while (!(n == 0)) {
+        while ((n > 1)) {
 
             for (int prime : primeNumbers) {
 
                 int numberOfPrime = 0;
 
-                while (!(n % 2 == 0)) {
+                while ((n % prime == 0)) {
                     numberOfPrime++;
-                    n = n - prime;
+                    n = n / prime;
                 }
 
                 if (numberOfPrime == 1) {
-                    output.append(numberOfPrime);
-                    n = n - (numberOfPrime * prime);
+                    output.append("(");
+                    output.append(prime);
+                    output.append(")");
                 } else {
                     output.append("(");
                     output.append(prime);
                     output.append("**");
                     output.append(numberOfPrime);
                     output.append(")");
-                    n = n - (numberOfPrime * prime);
+
                 }
 
-
-                if (numberOfPrime == 1) {
-                    output.append(numberOfPrime);
-                    n = n - (numberOfPrime * prime);
-                } else {
-                    output.append("(");
-                    output.append(prime);
-                    output.append("**");
-                    output.append(numberOfPrime);
-                    output.append(")");
-                    n = n - (numberOfPrime * prime);
+                if (n == 1) {
+                    break;
                 }
-            }
-
-            if (n == 0) {
-                break;
             }
         }
-
 
         return output.toString();
     }
@@ -93,3 +80,4 @@ public class PrimesInNumber {
 //        System.out.println(factors(25));
     }
 }
+
