@@ -20,7 +20,7 @@ public class PrimesInNumber {
 
             for (int prime : primeNumbers) {
                 if (n % prime == 0) {
-                    int numberOfPrime = n / 2;
+                    int numberOfPrime = n / ;
 
                     if (numberOfPrime == 1) {
                         output.append(numberOfPrime);
@@ -69,6 +69,7 @@ public class PrimesInNumber {
     }
 
     public static void main(String[] args) {
-        System.out.println(factors(24));
+//        System.out.println(factors(24));
+        System.out.println(factors(25));
     }
 }
