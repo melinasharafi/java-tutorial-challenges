@@ -19,27 +19,45 @@ public class PrimesInNumber {
         while (!(n == 0)) {
 
             for (int prime : primeNumbers) {
-                if (n % prime == 0) {
-                    int numberOfPrime = n / ;
 
-                    if (numberOfPrime == 1) {
-                        output.append(numberOfPrime);
-                        n = n - (numberOfPrime * prime);
-                    } else {
-                        output.append("(");
-                        output.append(prime);
-                        output.append("**");
-                        output.append(numberOfPrime);
-                        output.append(")");
-                        n = n - (numberOfPrime * prime);
-                    }
+                int numberOfPrime = 0;
+
+                while (!(n % 2 == 0)) {
+                    numberOfPrime++;
+                    n = n - prime;
                 }
 
-                if (n == 0) {
-                    break;
+                if (numberOfPrime == 1) {
+                    output.append(numberOfPrime);
+                    n = n - (numberOfPrime * prime);
+                } else {
+                    output.append("(");
+                    output.append(prime);
+                    output.append("**");
+                    output.append(numberOfPrime);
+                    output.append(")");
+                    n = n - (numberOfPrime * prime);
+                }
+
+
+                if (numberOfPrime == 1) {
+                    output.append(numberOfPrime);
+                    n = n - (numberOfPrime * prime);
+                } else {
+                    output.append("(");
+                    output.append(prime);
+                    output.append("**");
+                    output.append(numberOfPrime);
+                    output.append(")");
+                    n = n - (numberOfPrime * prime);
                 }
             }
+
+            if (n == 0) {
+                break;
+            }
         }
+
 
         return output.toString();
     }
@@ -68,8 +86,10 @@ public class PrimesInNumber {
         return primes;
     }
 
+
     public static void main(String[] args) {
-//        System.out.println(factors(24));
-        System.out.println(factors(25));
+        System.out.println(factors(24));
+
+//        System.out.println(factors(25));
     }
 }
