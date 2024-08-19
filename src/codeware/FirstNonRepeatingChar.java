@@ -31,6 +31,6 @@ public class FirstNonRepeatingChar {
     }
 
     public static void main(String[] args) {
-        System.out.println(firstNonRepeatingLetter("a"));
+        System.out.println(firstNonRepeatingLetter("moon-men"));
     }
 }
