@@ -12,7 +12,7 @@ public class FirstNonRepeatingChar {
         }
 
         for (int i = 0; i < input.length(); i++) {
-            for (int j = i + 1; j < input.length(); j++) {
+            for (int j = 0; j < input.length(); j++) {
                 if (input.charAt(i) == input.charAt(j)) {
                     index = -1;
                     break;
