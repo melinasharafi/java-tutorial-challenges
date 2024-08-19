@@ -12,14 +12,14 @@ public class TripleTrouble {
         String num2ToString = Long.toString(num2);
 
         for (int i = 0; i < num1ToString.length() - 2; i++) {
-            if (num1ToString.charAt(i) == num1ToString.charAt(i+1) && num1ToString.charAt(i) == num1ToString.charAt(i+2)){
+            if (num1ToString.charAt(i) == num1ToString.charAt(i + 1) && num1ToString.charAt(i) == num1ToString.charAt(i + 2)) {
                 tripleChar = num1ToString.charAt(i);
                 break;
             }
         }
 
         for (int i = 0; i < num2ToString.length() - 1; i++) {
-            if (num2ToString.charAt(i) == num2ToString.charAt(i+1) && num2ToString.charAt(i) == tripleChar){
+            if (num2ToString.charAt(i) == num2ToString.charAt(i + 1) && num2ToString.charAt(i) == tripleChar) {
                 check = true;
                 break;
             }
@@ -29,6 +29,9 @@ public class TripleTrouble {
             return 1;
         }
         return 0;
+    }
 
+    public static void main(String[] args) {
+        System.out.println(TripleDouble(451999277, 47722899));
     }
 }
