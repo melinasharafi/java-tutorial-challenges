@@ -27,6 +27,6 @@ public class FirstNonRepeatingChar {
     }
 
     public static void main(String[] args) {
-        System.out.println(firstNonRepeatingLetter("stress"));
+        System.out.println(firstNonRepeatingLetter("a"));
     }
 }
