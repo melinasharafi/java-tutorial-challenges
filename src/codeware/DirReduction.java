@@ -29,8 +29,7 @@ public class DirReduction {
             }
         }
 
-//        return finalDirection.toArray(new String[0]);
-
+        return finalDirection.toArray(new String[0]);
     }
 
     public static boolean isDirectlyOpposite(List<String> dirctionList) {
