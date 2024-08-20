@@ -8,7 +8,7 @@ public class DirReduction {
 
     public static String[] dirReduc(String[] arr) {
 
-        List<String> finalDirection = Arrays.asList(arr);
+        List<String> finalDirection = new ArrayList<>(Arrays.asList(arr));
 
         Map<String, Integer> direction = new HashMap<>();
         direction.put("NORTH", 1);
@@ -22,8 +22,8 @@ public class DirReduction {
                 int iPlus1Value = direction.get(finalDirection.get(i + 1));
 
                 if (iValue + iPlus1Value == 0) {
-g                    finalDirection.remove(finalDirection.get(i));
                     finalDirection.remove(finalDirection.get(i));
+                    finalDirection.remove(finalDirection.get(i + 1));
                 }
             }
         }
@@ -49,10 +49,10 @@ g                    finalDirection.remove(finalDirection.get(i));
     }
 
     public static void main(String[] args) {
-        String[] directions = { "NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST" };
+        String[] directions = {"NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"};
         String[] finalDirections = dirReduc(directions);
         for (String dir : finalDirections) {
-            System.out.print(dir+ " ");
+            System.out.print(dir + " ");
         }
     }
 }
