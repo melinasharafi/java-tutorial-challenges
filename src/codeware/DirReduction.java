@@ -22,7 +22,7 @@ public class DirReduction {
                 int iPlus1Value = direction.get(finalDirection.get(i + 1));
 
                 if (iValue + iPlus1Value == 0) {
-                    finalDirection.remove(finalDirection.get(i));
+g                    finalDirection.remove(finalDirection.get(i));
                     finalDirection.remove(finalDirection.get(i));
                 }
             }
@@ -46,5 +46,13 @@ public class DirReduction {
         }
 
         return true;
+    }
+
+    public static void main(String[] args) {
+        String[] directions = { "NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST" };
+        String[] finalDirections = dirReduc(directions);
+        for (String dir : finalDirections) {
+            System.out.print(dir+ " ");
+        }
     }
 }
