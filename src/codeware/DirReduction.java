@@ -17,13 +17,14 @@ public class DirReduction {
         direction.put("EAST", -2);
 
         while (!isDirectlyOpposite(finalDirection)) {
-            for (int i = 0; i < finalDirection.size(); i++) {
+            for (int i = 0; i < finalDirection.size() - 2; i++) {
                 int iValue = direction.get(finalDirection.get(i));
                 int iPlus1Value = direction.get(finalDirection.get(i + 1));
 
                 if (iValue + iPlus1Value == 0) {
-                    finalDirection.remove(finalDirection.get(i));
                     finalDirection.remove(finalDirection.get(i + 1));
+                    finalDirection.remove(finalDirection.get(i));
+                    i--;
                 }
             }
         }
@@ -39,7 +40,7 @@ public class DirReduction {
         direction.put("WEST", 2);
         direction.put("EAST", -2);
 
-        for (int i = 0; i < dirctionList.size(); i++) {
+        for (int i = 0; i < dirctionList.size() - 1; i++) {
             if (direction.get(dirctionList.get(i)) + direction.get(dirctionList.get(i + 1)) == 0) {
                 return false;
             }
