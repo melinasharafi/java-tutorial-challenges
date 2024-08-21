@@ -5,16 +5,18 @@ import java.util.*;
 
 public class DirReduction {
 
+    private static Map<String, Integer> direction = new HashMap<>();
 
-    public static String[] dirReduc(String[] arr) {
-
-        List<String> finalDirection = new ArrayList<>(Arrays.asList(arr));
-
-        Map<String, Integer> direction = new HashMap<>();
+    static {
         direction.put("NORTH", 1);
         direction.put("SOUTH", -1);
         direction.put("WEST", 2);
         direction.put("EAST", -2);
+    }
+
+    public static String[] dirReduc(String[] arr) {
+
+        List<String> finalDirection = new ArrayList<>(Arrays.asList(arr));
 
         while (!isDirectlyOpposite(finalDirection)) {
             for (int i = 0; i < finalDirection.size() - 2; i++) {
@@ -33,12 +35,6 @@ public class DirReduction {
     }
 
     public static boolean isDirectlyOpposite(List<String> dirctionList) {
-
-        Map<String, Integer> direction = new HashMap<>();
-        direction.put("NORTH", 1);
-        direction.put("SOUTH", -1);
-        direction.put("WEST", 2);
-        direction.put("EAST", -2);
 
         for (int i = 0; i < dirctionList.size() - 1; i++) {
             if (direction.get(dirctionList.get(i)) + direction.get(dirctionList.get(i + 1)) == 0) {
