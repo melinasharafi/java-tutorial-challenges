@@ -28,6 +28,7 @@ public class Scramblies {
 
     public static void main(String[] args) {
         System.out.println(scramble("melina", "meli"));
+        System.out.println(scramble("melina", "sharafi"));
     }
 
 }
