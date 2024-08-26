@@ -8,8 +8,8 @@ public class Scramblies {
 
     public static boolean scramble(String str1, String str2) {
         // Convert str1 and str2 into List<Character>
-        List<Character> str1ToCharacter = str1.chars().mapToObj(c -> (char) c).collect(Collectors.toList());
-        List<Character> str2ToCharacter = str2.chars().mapToObj(c -> (char) c).collect(Collectors.toList());
+        List<Character> str1ToCharacter = str1.toLowerCase().chars().mapToObj(c -> (char) c).collect(Collectors.toList());
+        List<Character> str2ToCharacter = str2.toLowerCase().chars().mapToObj(c -> (char) c).collect(Collectors.toList());
 
         // check if chars at str2ToCharacter are included in str1ToCharacter
         for (Character c : str1ToCharacter) {
@@ -26,5 +26,8 @@ public class Scramblies {
         return false; // Placeholder return
     }
 
+    public static void main(String[] args) {
+        System.out.println(scramble("melina", "meli"));
+    }
 
 }
